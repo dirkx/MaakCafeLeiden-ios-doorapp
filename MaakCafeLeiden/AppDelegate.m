@@ -30,15 +30,8 @@ NSString * const kConfigActivitySoundsOnOff            = PREFIX "configActivityS
 NSString * const kConfigUniqueIdentifier        = PREFIX "uuid";
 
 NSString * const kRegionIdentifier = @"CircleRegionIdentifier";
+
 CLLocationCoordinate2D maakCafeLoc = { MAAKCAFE_LAT, MAAKCAFE_LON };
-
-
-@interface CandG
-+(id)Arrives:(NSString *)name atTime:(NSDate *)time;
-+(id)Leaves:(NSString *)name atTime:(NSDate *)time;
--(NSDate *)date;
--(NSString*)name;
-@end
 
 @interface AppDelegate() <CLLocationManagerDelegate> {
     BOOL _makerActivity;
@@ -203,11 +196,61 @@ CLLocationCoordinate2D maakCafeLoc = { MAAKCAFE_LAT, MAAKCAFE_LON };
         
         [[NSUserDefaults standardUserDefaults] setValue:uuid forKey:kConfigUniqueIdentifier];
     };
-    
-    // Tell the server of our (new) token.
+
+    // Delay registration a little bit - as the machine is fairly buzy right now with setting
+    // up the screen and what not - hence we want to prioritize what the user sees.
     //
-    NSLog(@"didRegisterForRemoteNotificationsWithDeviceToken -- token %@ for us: %@",newDeviceToken, configUniqueIdentifier);
+    [NSTimer scheduledTimerWithTimeInterval:1.5 target:self selector:@selector(registerWithServer:) userInfo:newDeviceToken repeats:NO];
+}
+
+-(void)registerWithServer:(NSTimer *)aTimer
+{
+    NSData * newDeviceToken = aTimer.userInfo;
     
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
+
+        static int retryDelay = 10;
+        // Tell the server of our (new) token.
+        //
+        NSMutableString * hexStr = [NSMutableString stringWithCapacity:[newDeviceToken length] * 2];
+        for(int i = 0; i < [newDeviceToken length];i++)
+            [hexStr appendFormat:@"%02X",((unsigned char *)[newDeviceToken bytes])[i]];
+        
+        NSString * uuid = configUniqueIdentifier;
+        NSURL * url = [NSURL URLWithString:[NSString stringWithFormat:@"http://10.11.0.220/register?uuid=%@&token=%@",
+                                            [uuid stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding],
+                                            [hexStr stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding]
+                                            ]
+                       ];
+        NSError * error;
+        NSData * registerConfirm = [NSData dataWithContentsOfURL:url options:0 error:&error];
+        
+        NSString * reply = [[NSString alloc] initWithData:registerConfirm encoding:NSASCIIStringEncoding];
+        
+        if (error) {
+            retryDelay = MIN(30*60*60, retryDelay * 1.2+(rand()%30));
+            
+            NSLog(@"Registration failed (will retry in %d seconds): %@", retryDelay, [error description]);
+            
+            NSTimer *timer = [NSTimer timerWithTimeInterval:retryDelay
+                                                     target:self
+                                                   selector:@selector(registerWithServer:)
+                                                   userInfo:newDeviceToken
+                                                    repeats:NO];
+            
+            // Bit messy - but we need to add timers to the mainloop - while we're
+            // running from a low priority thread.
+            //
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [[NSRunLoop mainRunLoop] addTimer:timer forMode:NSDefaultRunLoopMode];
+            });
+            
+        } else if (![reply isEqualToString:@"OK"]) {
+            NSLog(@"Registration failed: %@", reply);
+        } else {
+            NSLog(@"Registration completed");
+        }
+    });
 }
 
 - (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {
@@ -224,8 +267,7 @@ CLLocationCoordinate2D maakCafeLoc = { MAAKCAFE_LAT, MAAKCAFE_LON };
     
     UIApplicationState state = [application applicationState];
     if (state == UIApplicationStateActive) {
-        
-        if ([[[userInfo objectForKey:@"aps"] objectForKey:@"type"] isEqualToString:@"entry"]) {
+        if ([[[userInfo objectForKey:@"maakcafe"] objectForKey:@"type"] isEqualToString:@"entry"]) {
             if (configDoorNotificationsOn && configDoorNotificationsSoundOn)
                 [self playSound];
         };
@@ -378,11 +420,14 @@ NSMutableArray * tmp;
 
 -(void)handleNotification:(NSDictionary *)userInfo {
     self.activeMakers = [[[userInfo objectForKey:@"aps"] objectForKey:@"badge"] intValue];
+    
     [[UIApplication sharedApplication] setApplicationIconBadgeNumber:self.activeMakers];
     [self performSelectorInBackground:@selector(updateNarative) withObject:nil];
     
-    if ([[[userInfo objectForKey:@"aps"] objectForKey:@"type"] isEqualToString:@"event"]) {
-        NSString * what = [[userInfo objectForKey:@"aps"] objectForKey:@"what"];
+    NSDictionary * maakCafeInfo = [userInfo objectForKey:@"maakcafe"];
+    if ([[maakCafeInfo objectForKey:@"type"] isEqualToString:@"event"]) {
+        NSString * what = [maakCafeInfo objectForKey:@"what"];
+        
         if ([what caseInsensitiveCompare:@"laser"] == NSOrderedSame)
             [self.mainViewController buzz:LASER];
         if ([what caseInsensitiveCompare:@"radio"] == NSOrderedSame)
