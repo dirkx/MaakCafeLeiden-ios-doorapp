@@ -1,0 +1,36 @@
+
+/* Class = "IBUINavigationItem"; title = "Configuration"; ObjectID = "43"; */
+"43.title" = "Configuration";
+
+/* Class = "IBUILabel"; text = "CopyrightStatement"; ObjectID = "50"; */
+"50.text" = "CopyrightStatement";
+
+/* Class = "IBUILabel"; text = "appName"; ObjectID = "58"; */
+"58.text" = "appName";
+
+/* Class = "IBUILabel"; text = "Door notifications"; ObjectID = "72"; */
+"72.text" = "Door notifications";
+
+/* Class = "IBUILabel"; text = "also play sound"; ObjectID = "73"; */
+"73.text" = "also play sound";
+
+/* Class = "IBUIButton"; normalTitle = "Button"; ObjectID = "80"; */
+"80.normalTitle" = "Button";
+
+/* Class = "IBUILabel"; text = "also display alert"; ObjectID = "82"; */
+"82.text" = "also display alert";
+
+/* Class = "IBUILabel"; text = "alert me"; ObjectID = "88"; */
+"88.text" = "alert me";
+
+/* Class = "IBUILabel"; text = "when I am within 8 km of the space"; ObjectID = "90"; */
+"90.text" = "when I am within 8 km of the space";
+
+/* Class = "IBUILabel"; text = "Vibrate the phone"; ObjectID = "91"; */
+"91.text" = "Vibrate the phone";
+
+/* Class = "IBUILabel"; text = "when I am within 8 km of the space and there is making going on"; ObjectID = "92"; */
+"92.text" = "when I am within 8 km of the space and there is making going on";
+
+/* Class = "IBUILabel"; text = "Silly activity sounds"; ObjectID = "129"; */
+"129.text" = "Silly activity sounds";

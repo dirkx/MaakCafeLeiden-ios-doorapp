@@ -1,0 +1,36 @@
+
+/* Class = "IBUINavigationItem"; title = "Instellingen"; ObjectID = "43"; */
+"43.title" = "Instellingen";
+
+/* Class = "IBUILabel"; text = "CopyrightStatement"; ObjectID = "50"; */
+"50.text" = "CopyrightStatement";
+
+/* Class = "IBUILabel"; text = "appName"; ObjectID = "58"; */
+"58.text" = "appName";
+
+/* Class = "IBUILabel"; text = "Waarschuwing deur"; ObjectID = "72"; */
+"72.text" = "Waarschuwing deur";
+
+/* Class = "IBUILabel"; text = "met geluid"; ObjectID = "73"; */
+"73.text" = "met geluid";
+
+/* Class = "IBUIButton"; normalTitle = "Button"; ObjectID = "80"; */
+"80.normalTitle" = "Button";
+
+/* Class = "IBUILabel"; text = "met pop-up"; ObjectID = "82"; */
+"82.text" = "met pop-up";
+
+/* Class = "IBUILabel"; text = "alarmeer me allen"; ObjectID = "88"; */
+"88.text" = "alarmeer me allen";
+
+/* Class = "IBUILabel"; text = "when I am within 8 km of the space"; ObjectID = "90"; */
+"90.text" = "when I am within 8 km of the space";
+
+/* Class = "IBUILabel"; text = "Vibreer de telefoon"; ObjectID = "91"; */
+"91.text" = "Vibreer de telefoon";
+
+/* Class = "IBUILabel"; text = "when I am within 8 km of the space and there is making going on"; ObjectID = "92"; */
+"92.text" = "when I am within 8 km of the space and there is making going on";
+
+/* Class = "IBUILabel"; text = "Ambient geluidjes"; ObjectID = "129"; */
+"129.text" = "Ambient geluidjes";
