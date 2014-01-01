@@ -15,6 +15,7 @@
 #import "FlipsideViewController.h"
 #import "MaakCafeLogoView.h"
 #import "ShakingImageView.h"
+#import "BadgeView.h"
 
 @interface MainViewController : UIViewController <FlipsideViewControllerDelegate>
 
@@ -28,6 +29,8 @@
 @property (strong, nonatomic) IBOutlet ShakingImageView *electricView;
 @property (strong, nonatomic) IBOutlet ShakingImageView *radioView;
 @property (strong, nonatomic) IBOutlet ShakingImageView *soundView;
+
+@property (strong, nonatomic) IBOutlet BadgeView *badgeView;
 
 - (IBAction)showInfo:(id)sender;
 

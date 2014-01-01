@@ -12,7 +12,8 @@ $message = 'mary';
 ////////////////////////////////////////////////////////////////////////////////
 
 $ctx = stream_context_create();
-stream_context_set_option($ctx, 'ssl', 'local_cert', 'ck.pem');
+stream_context_set_option($ctx, 'ssl', 'local_cert', '/Users/dirkx/.push-makespace.pem');
+
 # stream_context_set_option($ctx, 'ssl', 'passphrase', $passphrase);
 
 // Open a connection to the APNS server
@@ -32,9 +33,8 @@ $body['aps'] = array(
 	'badge' => '3',
 	);
 $body['maakcafe'] = array(
-	'foo' => 'bar',
-	'foo2' => 'bar',
-	'foo3' => 'bar',
+	'type' => 'event',
+	'what' => 'laser',
 );
 
 // Encode the payload as JSON

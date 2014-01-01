@@ -88,7 +88,15 @@
                                                          toColor:[CIColor colorWithCGColor:[[UIColor colorWithWhite:0.25 alpha:1] CGColor]]];
     self.image = self.negImage;
     
-    // [self performSelector:@selector(shake) withObject:nil afterDelay:3+rand() % 7];
+    [self performSelector:@selector(shake) withObject:nil afterDelay:30+rand() % 70];
+#if 0
+    UIButton * b = [[UIButton alloc] initWithFrame:self.bounds];
+    [b addTarget:self action:@selector(shake:) forControlEvents:UIControlEventTouchUpInside];
+    [b setEnabled:YES];
+    b.frame = self.frame;
+    [self addSubview:b];
+#endif
+    
     return self;
 }
 
@@ -104,7 +112,12 @@
     [self tock:nil];
 }
 
+-(void)shake:(id)sender {
+    [self shake];
+}
+
 -(void)shake {
+    NSLog(@"Shake");
     if (state)
         state = 2;
     else

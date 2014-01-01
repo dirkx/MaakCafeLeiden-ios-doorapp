@@ -158,7 +158,7 @@
 
         UIBezierPath* bezierPath = [UIBezierPath bezierPath];
 #if 0
-        // Spanner - setting screw
+        // Spanner - setting screw - simple
         //
         [bezierPath moveToPoint: CGPointMake(103.59, 152.69)];
         [bezierPath addLineToPoint: CGPointMake(99.63, 153.23)];
@@ -172,6 +172,35 @@
         [bezierPath addLineToPoint: CGPointMake(98.77, 154.35)];
         [bezierPath addLineToPoint: CGPointMake(104.71, 153.55)];
         [bezierPath addLineToPoint: CGPointMake(103.23, 142.65)];
+        [bezierPath closePath];
+#endif
+        
+#if 1
+        // Spanner - setting screw - bit more like a screw.
+        //
+        [bezierPath moveToPoint: CGPointMake(103.23, 142.65)];
+        [bezierPath addLineToPoint: CGPointMake(97.29, 143.45)];
+        [bezierPath addLineToPoint: CGPointMake(98.77, 154.35)];
+        [bezierPath addLineToPoint: CGPointMake(104.71, 153.55)];
+        [bezierPath addLineToPoint: CGPointMake(103.23, 142.65)];
+        //
+        [bezierPath moveToPoint: CGPointMake(97.57, 143.71)];
+        [bezierPath addLineToPoint: CGPointMake(99.68, 144.85)];
+        [bezierPath addLineToPoint: CGPointMake(97.83, 146.79)];
+        [bezierPath addLineToPoint: CGPointMake(99.94, 147.93)];
+        [bezierPath addLineToPoint: CGPointMake(98.09, 149.88)];
+        [bezierPath addLineToPoint: CGPointMake(100.2, 151.02)];
+        [bezierPath addLineToPoint: CGPointMake(98.35, 152.96)];
+        [bezierPath addLineToPoint: CGPointMake(100.46, 154.1)];
+        [bezierPath addLineToPoint: CGPointMake(104.43, 153.29)];
+        [bezierPath addLineToPoint: CGPointMake(102.32, 152.15)];
+        [bezierPath addLineToPoint: CGPointMake(104.17, 150.21)];
+        [bezierPath addLineToPoint: CGPointMake(102.06, 149.07)];
+        [bezierPath addLineToPoint: CGPointMake(103.91, 147.12)];
+        [bezierPath addLineToPoint: CGPointMake(101.8, 145.98)];
+        [bezierPath addLineToPoint: CGPointMake(103.65, 144.04)];
+        [bezierPath addLineToPoint: CGPointMake(101.54, 142.9)];
+        [bezierPath addLineToPoint: CGPointMake(97.57, 143.71)];
         [bezierPath closePath];
 #endif
         

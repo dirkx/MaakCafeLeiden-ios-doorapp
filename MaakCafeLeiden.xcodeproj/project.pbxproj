@@ -15,13 +15,14 @@
 		32073FC517A785DA00401C99 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32073FC417A785DA00401C99 /* CoreImage.framework */; };
 		32073FC717A78C4100401C99 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32073FC617A78C4100401C99 /* QuartzCore.framework */; };
 		32073FE617A7B66400401C99 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 32073FE517A7B66400401C99 /* AppDelegate.m */; };
-		32073FE717A7B69700401C99 /* AboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32073FE917A7B69700401C99 /* AboutViewController.xib */; };
 		32073FF517A7B75400401C99 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 32073FF317A7B75400401C99 /* Localizable.strings */; };
 		32073FFB17A7D81000401C99 /* 60178__benboncan__circular-saw-crosscutting.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32073FFA17A7D81000401C99 /* 60178__benboncan__circular-saw-crosscutting.wav */; };
 		32073FFE17A7D81F00401C99 /* 38693__cognito-perceptu__am-band-static.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32073FFC17A7D81F00401C99 /* 38693__cognito-perceptu__am-band-static.wav */; };
 		32073FFF17A7D81F00401C99 /* 11153__jimpurbrick__polysixslowinglaser2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32073FFD17A7D81F00401C99 /* 11153__jimpurbrick__polysixslowinglaser2.wav */; };
 		3207400117A7D8AF00401C99 /* 19487__halleck__jacobsladdersingle2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 3207400017A7D8AF00401C99 /* 19487__halleck__jacobsladdersingle2.wav */; };
 		3207400317A7D92800401C99 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3207400217A7D92800401C99 /* AVFoundation.framework */; };
+		3216F66117A8F31100273580 /* BadgeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3216F66017A8F31100273580 /* BadgeView.m */; };
+		32230ACD17A90EC2009DC958 /* MainViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 329D928517A8FABD00A9E718 /* MainViewController_iPhone.xib */; };
 		3254B7C2179D666E009096C1 /* MaakCafeLogoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3254B7C1179D666E009096C1 /* MaakCafeLogoView.m */; };
 		3254B7CB179D8667009096C1 /* Licenses.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3254B7CA179D8667009096C1 /* Licenses.txt */; };
 		3254B7D4179D8961009096C1 /* os-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 3254B7D3179D8961009096C1 /* os-logo.png */; };
@@ -43,9 +44,9 @@
 		328C0131179D3F3900D72B3D /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 328C0130179D3F3900D72B3D /* Default-568h@2x.png */; };
 		328C0134179D3F3A00D72B3D /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 328C0133179D3F3A00D72B3D /* MainViewController.m */; };
 		328C0137179D3F3A00D72B3D /* FlipsideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 328C0136179D3F3A00D72B3D /* FlipsideViewController.m */; };
-		328C013A179D3F3A00D72B3D /* MainViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 328C0138179D3F3A00D72B3D /* MainViewController_iPhone.xib */; };
-		328C013D179D3F3A00D72B3D /* MainViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 328C013B179D3F3A00D72B3D /* MainViewController_iPad.xib */; };
-		328C0140179D3F3A00D72B3D /* FlipsideViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 328C013E179D3F3A00D72B3D /* FlipsideViewController.xib */; };
+		329D928E17A8FABD00A9E718 /* MainViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 329D928717A8FABD00A9E718 /* MainViewController_iPad.xib */; };
+		329D928F17A8FABD00A9E718 /* FlipsideViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 329D928917A8FABD00A9E718 /* FlipsideViewController.xib */; };
+		329D929017A8FABD00A9E718 /* AboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 329D928B17A8FABD00A9E718 /* AboutViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,10 +60,6 @@
 		32073FC417A785DA00401C99 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
 		32073FC617A78C4100401C99 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		32073FE517A7B66400401C99 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		32073FEA17A7B6F900401C99 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainViewController_iPhone.xib; sourceTree = "<group>"; };
-		32073FEB17A7B6F900401C99 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainViewController_iPad.xib; sourceTree = "<group>"; };
-		32073FEC17A7B6F900401C99 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/FlipsideViewController.xib; sourceTree = "<group>"; };
-		32073FED17A7B6F900401C99 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/AboutViewController.xib; sourceTree = "<group>"; };
 		32073FF217A7B70200401C99 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		32073FF417A7B75400401C99 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		32073FF617A7B75900401C99 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -71,14 +68,16 @@
 		32073FFD17A7D81F00401C99 /* 11153__jimpurbrick__polysixslowinglaser2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 11153__jimpurbrick__polysixslowinglaser2.wav; sourceTree = "<group>"; };
 		3207400017A7D8AF00401C99 /* 19487__halleck__jacobsladdersingle2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 19487__halleck__jacobsladdersingle2.wav; sourceTree = "<group>"; };
 		3207400217A7D92800401C99 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
-		3207400417A7DE1700401C99 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/MainViewController_iPad.strings; sourceTree = "<group>"; };
-		3207400617A7DE1A00401C99 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/MainViewController_iPad.strings; sourceTree = "<group>"; };
-		3207400717A7DE2400401C99 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/MainViewController_iPhone.strings; sourceTree = "<group>"; };
-		3207400917A7DE2500401C99 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/MainViewController_iPhone.strings; sourceTree = "<group>"; };
-		3207400A17A7DE2D00401C99 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/FlipsideViewController.strings; sourceTree = "<group>"; };
-		3207400C17A7DE3000401C99 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/FlipsideViewController.strings; sourceTree = "<group>"; };
-		3207400D17A7DE3B00401C99 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/AboutViewController.strings; sourceTree = "<group>"; };
-		3207400E17A7DE4000401C99 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/AboutViewController.strings; sourceTree = "<group>"; };
+		3216F65F17A8F31100273580 /* BadgeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BadgeView.h; path = MaakCafeLeiden/BadgeView.h; sourceTree = "<group>"; };
+		3216F66017A8F31100273580 /* BadgeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BadgeView.m; path = MaakCafeLeiden/BadgeView.m; sourceTree = "<group>"; };
+		32230ACE17A90F49009DC958 /* nl */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = nl; path = nl.lproj/MainViewController_iPhone.xib; sourceTree = "<group>"; };
+		32230ACF17A90F49009DC958 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainViewController_iPhone.xib; sourceTree = "<group>"; };
+		32230AD017A90F62009DC958 /* nl */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = nl; path = nl.lproj/MainViewController_iPad.xib; sourceTree = "<group>"; };
+		32230AD117A90F62009DC958 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainViewController_iPad.xib; sourceTree = "<group>"; };
+		32230AD217A90F71009DC958 /* nl */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = nl; path = nl.lproj/FlipsideViewController.xib; sourceTree = "<group>"; };
+		32230AD317A90F71009DC958 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/FlipsideViewController.xib; sourceTree = "<group>"; };
+		32230AD417A90F81009DC958 /* nl */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = nl; path = nl.lproj/AboutViewController.xib; sourceTree = "<group>"; };
+		32230AD517A90F81009DC958 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/AboutViewController.xib; sourceTree = "<group>"; };
 		3254B7C0179D666E009096C1 /* MaakCafeLogoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MaakCafeLogoView.h; path = MaakCafeLeiden/MaakCafeLogoView.h; sourceTree = "<group>"; };
 		3254B7C1179D666E009096C1 /* MaakCafeLogoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MaakCafeLogoView.m; path = MaakCafeLeiden/MaakCafeLogoView.m; sourceTree = "<group>"; };
 		3254B7CA179D8667009096C1 /* Licenses.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Licenses.txt; sourceTree = "<group>"; };
@@ -148,6 +147,8 @@
 				3254B7C1179D666E009096C1 /* MaakCafeLogoView.m */,
 				32073FC117A6DEBA00401C99 /* ShakingImageView.h */,
 				32073FC217A6DEBA00401C99 /* ShakingImageView.m */,
+				3216F65F17A8F31100273580 /* BadgeView.h */,
+				3216F66017A8F31100273580 /* BadgeView.m */,
 			);
 			name = EyeCandy;
 			sourceTree = "<group>";
@@ -245,10 +246,10 @@
 		32A65835179EB5700095C856 /* NIBs */ = {
 			isa = PBXGroup;
 			children = (
-				328C0138179D3F3A00D72B3D /* MainViewController_iPhone.xib */,
-				328C013B179D3F3A00D72B3D /* MainViewController_iPad.xib */,
-				328C013E179D3F3A00D72B3D /* FlipsideViewController.xib */,
-				32073FE917A7B69700401C99 /* AboutViewController.xib */,
+				329D928517A8FABD00A9E718 /* MainViewController_iPhone.xib */,
+				329D928717A8FABD00A9E718 /* MainViewController_iPad.xib */,
+				329D928917A8FABD00A9E718 /* FlipsideViewController.xib */,
+				329D928B17A8FABD00A9E718 /* AboutViewController.xib */,
 			);
 			name = NIBs;
 			sourceTree = "<group>";
@@ -310,12 +311,8 @@
 				328C012D179D3F3900D72B3D /* Default.png in Resources */,
 				328C012F179D3F3900D72B3D /* Default@2x.png in Resources */,
 				328C0131179D3F3900D72B3D /* Default-568h@2x.png in Resources */,
-				328C013A179D3F3A00D72B3D /* MainViewController_iPhone.xib in Resources */,
-				328C013D179D3F3A00D72B3D /* MainViewController_iPad.xib in Resources */,
-				328C0140179D3F3A00D72B3D /* FlipsideViewController.xib in Resources */,
 				3254B7CB179D8667009096C1 /* Licenses.txt in Resources */,
 				3254B7D4179D8961009096C1 /* os-logo.png in Resources */,
-				32073FE717A7B69700401C99 /* AboutViewController.xib in Resources */,
 				3254B7E9179E7E2F009096C1 /* Creaking Door Spooky-SoundBible.com-1909842345.wav in Resources */,
 				32073FB417A6DCD600401C99 /* pictograms-aem-0055-laser_beam_hazard.png in Resources */,
 				32073FBC17A6DDD300401C99 /* pictograms-aem-0021-live_electrical_wire_contact.png in Resources */,
@@ -326,6 +323,10 @@
 				32073FFE17A7D81F00401C99 /* 38693__cognito-perceptu__am-band-static.wav in Resources */,
 				32073FFF17A7D81F00401C99 /* 11153__jimpurbrick__polysixslowinglaser2.wav in Resources */,
 				3207400117A7D8AF00401C99 /* 19487__halleck__jacobsladdersingle2.wav in Resources */,
+				329D928E17A8FABD00A9E718 /* MainViewController_iPad.xib in Resources */,
+				329D928F17A8FABD00A9E718 /* FlipsideViewController.xib in Resources */,
+				329D929017A8FABD00A9E718 /* AboutViewController.xib in Resources */,
+				32230ACD17A90EC2009DC958 /* MainViewController_iPhone.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -343,22 +344,13 @@
 				3254B7D7179D8A04009096C1 /* AboutViewController.m in Sources */,
 				32073FC317A6DEBA00401C99 /* ShakingImageView.m in Sources */,
 				32073FE617A7B66400401C99 /* AppDelegate.m in Sources */,
+				3216F66117A8F31100273580 /* BadgeView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		32073FE917A7B69700401C99 /* AboutViewController.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				32073FED17A7B6F900401C99 /* Base */,
-				3207400D17A7DE3B00401C99 /* en */,
-				3207400E17A7DE4000401C99 /* nl */,
-			);
-			name = AboutViewController.xib;
-			sourceTree = "<group>";
-		};
 		32073FF317A7B75400401C99 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -377,34 +369,40 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		328C0138179D3F3A00D72B3D /* MainViewController_iPhone.xib */ = {
+		329D928517A8FABD00A9E718 /* MainViewController_iPhone.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				32073FEA17A7B6F900401C99 /* Base */,
-				3207400717A7DE2400401C99 /* nl */,
-				3207400917A7DE2500401C99 /* en */,
+				32230ACE17A90F49009DC958 /* nl */,
+				32230ACF17A90F49009DC958 /* en */,
 			);
 			name = MainViewController_iPhone.xib;
 			sourceTree = "<group>";
 		};
-		328C013B179D3F3A00D72B3D /* MainViewController_iPad.xib */ = {
+		329D928717A8FABD00A9E718 /* MainViewController_iPad.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				32073FEB17A7B6F900401C99 /* Base */,
-				3207400417A7DE1700401C99 /* nl */,
-				3207400617A7DE1A00401C99 /* en */,
+				32230AD017A90F62009DC958 /* nl */,
+				32230AD117A90F62009DC958 /* en */,
 			);
 			name = MainViewController_iPad.xib;
 			sourceTree = "<group>";
 		};
-		328C013E179D3F3A00D72B3D /* FlipsideViewController.xib */ = {
+		329D928917A8FABD00A9E718 /* FlipsideViewController.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				32073FEC17A7B6F900401C99 /* Base */,
-				3207400A17A7DE2D00401C99 /* nl */,
-				3207400C17A7DE3000401C99 /* en */,
+				32230AD217A90F71009DC958 /* nl */,
+				32230AD317A90F71009DC958 /* en */,
 			);
 			name = FlipsideViewController.xib;
+			sourceTree = "<group>";
+		};
+		329D928B17A8FABD00A9E718 /* AboutViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				32230AD417A90F81009DC958 /* nl */,
+				32230AD517A90F81009DC958 /* en */,
+			);
+			name = AboutViewController.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

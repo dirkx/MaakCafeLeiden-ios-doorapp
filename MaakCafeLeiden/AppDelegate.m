@@ -73,7 +73,7 @@ CLLocationCoordinate2D maakCafeLoc = { MAAKCAFE_LAT, MAAKCAFE_LON };
         return [key hasPrefix:PREFIX];
     }];
     
-    NSLog(@"Settings %@", [dict dictionaryWithValuesForKeys:[mine allObjects]]);
+    NSLog(@"Settings (DEBUG enabled): %@", [dict dictionaryWithValuesForKeys:[mine allObjects]]);
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
@@ -118,7 +118,9 @@ CLLocationCoordinate2D maakCafeLoc = { MAAKCAFE_LAT, MAAKCAFE_LON };
         [self handleNotification:remoteNotif.userInfo];
     }
     
-    srand(-time(NULL));
+    // low quality random is used in various places. Lightly seeded.
+    //
+    srand(-time(NULL) ^ getpid());
     
     NSLog(@"Started - awaiting registration configs");
     return YES;
@@ -156,6 +158,7 @@ CLLocationCoordinate2D maakCafeLoc = { MAAKCAFE_LAT, MAAKCAFE_LON };
     self.makerActivity = _activeMakers > 0 ? YES : NO;
     
     [[UIApplication sharedApplication] setApplicationIconBadgeNumber:_activeMakers];
+    [self.mainViewController.badgeView setBadge:_activeMakers];
     
     [self.mainViewController.logoView setRotationsPerMinute:_activeMakers * 4.f];
     switch (_activeMakers) {
@@ -227,10 +230,17 @@ CLLocationCoordinate2D maakCafeLoc = { MAAKCAFE_LAT, MAAKCAFE_LON };
         
         NSString * reply = [[NSString alloc] initWithData:registerConfirm encoding:NSASCIIStringEncoding];
         
-        if (error) {
-            retryDelay = MIN(30*60*60, retryDelay * 1.2+(rand()%30));
+        if (error || ([reply caseInsensitiveCompare:@"OK"] != NSOrderedSame)) {
+            // keep going slower and slower; until we try once an hour. Randomize
+            // it a bit - to prevent thundering herds hitting our little server.
+            //
+            retryDelay = MIN(60*60, retryDelay * 1.5+(rand() % 30));
             
-            NSLog(@"Registration failed (will retry in %d seconds): %@", retryDelay, [error description]);
+            // We're not alterting the user - this sort of stuff is usually
+            // when we hit some sort of wifi-portal, etc.
+            //
+            NSLog(@"Registration failed (will retry in %d seconds): %@",
+                  retryDelay, error ? [error description] : reply);
             
             NSTimer *timer = [NSTimer timerWithTimeInterval:retryDelay
                                                      target:self
@@ -243,10 +253,7 @@ CLLocationCoordinate2D maakCafeLoc = { MAAKCAFE_LAT, MAAKCAFE_LON };
             //
             dispatch_async(dispatch_get_main_queue(), ^{
                 [[NSRunLoop mainRunLoop] addTimer:timer forMode:NSDefaultRunLoopMode];
-            });
-            
-        } else if (![reply isEqualToString:@"OK"]) {
-            NSLog(@"Registration failed: %@", reply);
+            });            
         } else {
             NSLog(@"Registration completed");
         }
@@ -293,7 +300,7 @@ NSMutableArray * tmp;
 
 -(void)updateNarative {
     
-    NSURL * url = [NSURL URLWithString:@"http://10.11.0.220/~dirkx/x.txt"];
+    NSURL * url = [NSURL URLWithString:@"http://schier.webweaving.org/x.txt"];
     
     NSString * content = [NSString stringWithContentsOfURL:url encoding:NSASCIIStringEncoding error:nil];
     if (!content)
@@ -505,7 +512,7 @@ NSMutableArray * tmp;
             NSLog(@"UIRemoteNotificationTypeNone - so no work.");
             [[UIApplication sharedApplication] unregisterForRemoteNotifications];
         } else {
-            NSLog(@"Registering for %04d", flag);
+            NSLog(@"registerForRemoteNotificationTypes:%04d - work to do", flag);
             [[UIApplication sharedApplication] registerForRemoteNotificationTypes:flag];
         };
     };
